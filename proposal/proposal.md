@@ -42,3 +42,21 @@ Uploaded the dataset in data folder. There is total 227 observations and
 20 variables in this dataset.
 
 ## 3. Data analysis plan
+
+Our outcome is quality of life, and this will be based on a few
+variables - literacy, GDP per capita, infant mortality, death rate… Our
+predictor will also be based on a few seperate variables - Net
+migration, population density, climate, quality of land, largest sectors
+of GDP…
+
+``` r
+#nothing yet
+```
+
+We should expect to use a variety of inferential statistical methods,
+mainly correlation and regression analysis.
+
+Our hypothesized answer is that there would be at least a weak relation
+between quality of life and other qualities of the country, therefore
+results that show some correlation between variables would support our
+hypothesis.
