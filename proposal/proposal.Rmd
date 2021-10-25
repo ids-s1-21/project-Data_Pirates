@@ -29,7 +29,7 @@ This data set has information about the different countries between 1970 and 201
 
 ## 2. Data
 
-
+Uploaded the dataset in data folder. There is total 227 observations and 20 variables in this dataset.
 
 ## 3. Data analysis plan
 

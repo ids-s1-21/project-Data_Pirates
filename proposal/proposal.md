@@ -38,4 +38,7 @@ and 2017. It is made up of data from the US government.
 
 ## 2. Data
 
+Uploaded the dataset in data folder. There is total 227 observations and
+20 variables in this dataset.
+
 ## 3. Data analysis plan
