@@ -1,6 +1,6 @@
 ---
 title: "Project proposal"
-author: "Team name"
+author: "Data Pirates"
 output: github_document
 ---
 
@@ -13,6 +13,18 @@ library(broom)
 
 ## 1. Introduction
 
+The dataset that we have decided to analyse for this project is called ‘Countries of the world’. 
+
+In this project we aim to research the relationships between various geographical and societal qualities across the different countries.
+
+There are 20 variables in this dataset, which include:
+Country, Region, Population, Area (sq. mi.), Pop. Density (per sq. mi.), Coastline (coast/area ratio), Net migration, Infant mortality (per 1000 births), GDP ($ per capita), Literacy (%), Phones (per 1000), Arable (%), Crops (%), Other (%), Climate, Birthrate, Deathrate, Agriculture, Industry and Service.
+
+Of these 20 variables: Country and Region are string variables, Area (sq. mi.), Pop. Density (per sq. mi.) and GDP ($ per capita) are integer variables, and the rest are decimal variables. 
+
+Each observation represents a country and there are 227 observations in total.
+
+This data set has information about the different countries between 1970 and 2017. It is made up of data from the US government.
 
 
 ## 2. Data
