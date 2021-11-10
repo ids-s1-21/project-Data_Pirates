@@ -2,41 +2,85 @@
 title: "Project proposal"
 author: "Data Pirates"
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r load-packages, message = FALSE}
 library(tidyverse)
 library(broom)
+library(here)
 ```
 
-*For instructions on what each section should include, please see the [project page](https://idsed.digital/assessments/project/#proposal) on the course website. Remove this text when completing your proposal*.
 
 ## 1. Introduction
+
 
 The dataset that we have decided to analyse for this project is called ‘Countries of the world’. 
 
 In this project we aim to research the relationships between various geographical and societal qualities across the different countries.
 
 There are 20 variables in this dataset, which include:
-Country, Region, Population, Area (sq. mi.), Pop. Density (per sq. mi.), Coastline (coast/area ratio), Net migration, Infant mortality (per 1000 births), GDP ($ per capita), Literacy (%), Phones (per 1000), Arable (%), Crops (%), Other (%), Climate, Birthrate, Deathrate, Agriculture, Industry and Service.
+`country`, `region`, `population`, `area`, `pop_density`, `coastline `, `net_migration`, `infant_mortality`, `GDP`, `literacy`, `phones`, `arable`, `crops`, `other`, `climate`, `birthrate`, `deathrate`, `agriculture`, `industry` and `service`.
 
-Of these 20 variables: Country and Region are string variables, Area (sq. mi.), Pop. Density (per sq. mi.) and GDP ($ per capita) are integer variables, and the rest are decimal variables. 
+Of these 20 variables: `country` and `region` are string variables, `area`, `pop_density` and `GDP` are integer variables, and the rest are decimal variables. 
 
-Each observation represents a country and there are 227 observations in total.
+Each observation represents different physical/geographical and societal attributes of each country in the dataset. There are 227 observations in total.
 
-This data set has information about the different countries between 1970 and 2017. It is made up of data from the US government.
+This data set has information about the different countries between 1970 and 2017. It is made up of data from the US government specifically the CIA World Factbook. We obtained this data from https://www.kaggle.com/fernandol/countries-of-the-world.  
 
 
 ## 2. Data
 
-Uploaded the dataset in data folder. There is total 227 observations and 20 variables in this dataset.
+``` {r load-data, echo=FALSE}
+Countries_of_the_world <- read_csv(here :: here("data/countries of the world.csv"))
+
+```
+
+Uploaded the dataset in data folder. There is a total of 227 observations and 20 variables in this dataset.
 
 ## 3. Data analysis plan
 
-Our outcome is quality of life, and this will be based on a few variables - literacy, GDP per capita, infant mortality, death rate... Our predictor will also be based on a few seperate variables - Net migration, population density, climate, quality of land, largest sectors of GDP...
+Our outcome is quality of life, and this will be based on a few variables - `literacy`, `GDP`, `infant_mortality`, `death_rate`... Our predictor will also be based on a few seperate variables - `net_migration`, `pop_ density`, `climate`, `arable`...
 
-``` {r intro statistics}
-#nothing yet
+``` {r rename-variables, echo=FALSE}
+Countries_of_the_world <- Countries_of_the_world %>%
+  rename(
+      country = Country,
+      region = Region,
+      population = Population,
+      area = `Area (sq. mi.)`,
+      pop_density = `Pop. Density (per sq. mi.)`,
+      coastline = `Coastline (coast/area ratio)`,
+      net_migration = `Net migration`,
+      infant_mortality = `Infant mortality (per 1000 births)`,
+      GDP = `GDP ($ per capita)`,
+      literacy = `Literacy (%)`,
+      phones = `Phones (per 1000)`,
+      arable = `Arable (%)`,
+      crops = `Crops (%)`,
+      other = `Other (%)`,
+      climate = Climate,
+      birthrate = Birthrate,
+      deathrate = Deathrate,
+      agriculture = Agriculture,
+      industry = Industry,
+      service = Service
+    ) 
+```
+
+
+```{r intro-statistics}
+intro_statistics_1 <- Countries_of_the_world %>%
+  select(region, pop_density, GDP) %>%
+  arrange(desc(GDP))
+intro_statistics_1
+
+intro_statistics_1 %>%
+  ggplot(aes(y = pop_density, x = GDP)) +
+  geom_point()
+
+  
 ```
 
 We should expect to use a variety of inferential statistical methods, mainly correlation and regression analysis.
