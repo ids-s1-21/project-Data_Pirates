@@ -13,7 +13,7 @@ there is total 227 observations and 20 variables in this dataset.
 - `infant_mortality`: Infant mortality per 1000 births of the country
 - `GDP`: GDP of the country which is the dollars per capita
 - `literacy`: Literacy rate of the country in percentages
-- `phones`: Phones in the country per 1000
+- `phones`: Phones in the country per 1000 people
 - `arable`: Arable land in the country in percentages 
 - `crops`: Crops in the country in percentages 
 - `other`: Other in percentages 
