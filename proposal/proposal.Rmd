@@ -69,23 +69,26 @@ Countries_of_the_world <- Countries_of_the_world %>%
     ) 
 ```
 
-
-```{r intro-statistics}
-intro_statistics_1 <- Countries_of_the_world %>%
-  select(region, pop_density, GDP) %>%
-  arrange(desc(GDP))
-intro_statistics_1
-
-intro_statistics_1 %>%
-  ggplot(aes(y = pop_density, x = GDP)) +
-  geom_point()
-
-  
-```
-
 We should expect to use a variety of inferential statistical methods, mainly correlation and regression analysis.
 
 Our hypothesized answer is that there would be at least a weak relation between quality of life and other qualities of the country, therefore results that show some correlation between variables would support our hypothesis.
+
+```{r intro-statistics}
+intro_statistics_1 <- Countries_of_the_world %>%
+  select(region, infant_mortality, GDP) %>%
+  arrange(desc(GDP))
+intro_statistics_1
+
+Countries_of_the_world %>%
+  ggplot(aes(x = GDP, y = infant_mortality)) +
+  geom_point() + 
+  labs(
+    x = "GDP Per Capita",
+    y = "Infant Mortality"
+  )
+```
+
+As shown in the graph usually as the GDP Per Capita goes up the infant mortality goes down. 
 
 
 
