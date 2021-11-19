@@ -3,23 +3,23 @@ there is total 227 observations and 20 variables in this dataset.
 
 ## name of data file
 
-- `variable1`: Country
-- `variable2`: Region
-- `variable3`: Population
-- `variable4`: Area(sq.mi.)
-- `variable5`: Pop. Density (per sq. mi.)
-- `variable6`: Coastline (coast/area ratio)
-- `variable7`: Net migration
-- `variable8`: Infant mortality (per 1000 births)
-- `variable9`: GDP ($ per capita)
-- `variable10`: Literacy (%)
-- `variable11`: Phones (per 1000)
-- `variable12`: Arable (%)
-- `variable13`: Crops (%)
-- `variable14`: Other (%)
-- `variable15`: Climate
-- `variable16`: Birthrate
-- `variable17`: Deathrate
-- `variable18`: Agriculture
-- `variable19`: Industry
-- `variable20`: Service
+- `country`: Country
+- `region`: Region
+- `population`: Population of the country
+- `area`: Area of the country in square miles
+- `pop_density`: Population Density of the country per square mile
+- `coastline`: Coastline of the country which is the coast/area ratio
+- `net_migration`: Net migration of the country 
+- `infant_mortality`: Infant mortality per 1000 births of the country
+- `GDP`: GDP of the country which is the dollars per capita
+- `literacy`: Literacy rate of the country in percentages
+- `phones`: Phones in the country per 1000 people
+- `arable`: Arable land in the country in percentages 
+- `crops`: Crops in the country in percentages 
+- `other`: Other in percentages 
+- `climate`: Climate of the country
+- `birthrate`: Birthrate of the country
+- `deathrate`: Deathrate of the country
+- `agriculture`: Agriculture in the country
+- `industry`: Industry in the country
+- `service`: Service intthe country
