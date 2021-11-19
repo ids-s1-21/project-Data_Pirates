@@ -4,5 +4,7 @@ Any extra documents you might have go here. This might include Rmd files you're 
 
 
 linear modelling between variables
-Tidy data 
-planning models
+Tidy data - Hamish
+Plan models - Yuki, Sara 
+Make models - all
+Analyse data - Sara, Yuki
