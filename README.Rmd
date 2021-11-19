@@ -1,6 +1,6 @@
 ---
-title: Project title
-author: by Team name
+title: Geographical and societal qualities of countries in the world
+author: by Data Pirates
 output: github_document
 ---
 

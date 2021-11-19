@@ -1,6 +1,6 @@
-Project title
+Geographical and societal qualities of countries in the world
 ================
-by Team name
+by Data Pirates
 
 ## Summary
 
