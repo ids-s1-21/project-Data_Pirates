@@ -2,6 +2,8 @@
 title: Geographical and societal qualities of countries in the world
 author: by Data Pirates
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Summary
@@ -21,7 +23,6 @@ Your results with proper output and graphics go in your presentation, this space
 
 ```{r load-data, echo = FALSE}
 Countries_of_the_world <- read_csv(here :: here("data/countries of the world.csv"))
-```
 ```
 
 ## Presentation
