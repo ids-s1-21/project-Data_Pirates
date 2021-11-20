@@ -12,6 +12,8 @@ Analyse data - Sara, Yuki
 Plan Models
 Which variables do we want to compare?
 
+
+
 How are do they help us to understand the differences between countries?
 
 

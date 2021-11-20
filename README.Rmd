@@ -22,7 +22,6 @@ And make sure to hide your code with  `echo = FALSE` unless the point you are tr
 Your results with proper output and graphics go in your presentation, this space is for a brief summary of your project.
 
 ```{r load-data, echo = FALSE}
-Countries_of_the_world <- read_csv(here :: here("data/countries of the world.csv"))
 ```
 
 ## Presentation
