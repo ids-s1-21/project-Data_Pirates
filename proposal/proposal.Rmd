@@ -86,6 +86,8 @@ Countries_of_the_world %>%
     x = "GDP Per Capita",
     y = "Infant Mortality Per 1000"
   )
+
+
 ```
 
 As shown in the graph usually as the GDP Per Capita goes up the infant mortality goes down. 
