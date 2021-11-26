@@ -92,5 +92,9 @@ Countries_of_the_world %>%
 
 As shown in the graph usually as the GDP Per Capita goes up the infant mortality goes down. 
 
+```{r}
+
+```
+
 
 

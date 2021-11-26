@@ -17,6 +17,7 @@ library(tidymodels)
 library(palmerpenguins)
 library(knitr)
 library(revealjs)
+library(gganimate)
 ```
 
 ```{r setup, include=FALSE}
