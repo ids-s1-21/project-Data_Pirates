@@ -7,6 +7,8 @@ date: <font size = '6'>`r Sys.Date()`</font>
 output:
   revealjs::revealjs_presentation:
     self_contained: false
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r load-packages, include = FALSE}
@@ -90,9 +92,9 @@ because you can combine HTML and Markdown syntax.
 
 ```{r boring-regression}
 # a boring regression
-model <- lm(dist ~ speed, data = cars)
-tidy(model)
-glance(model)
+Coastline_vs_GDP <- lm(population_density ~ deathrate + infant_mortality, data = Countries_of_the_world)
+tidy(Coastline_vs_GDP)
+glance(Coastline_vs_GDP)
 ```
 
 # Plots
