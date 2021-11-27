@@ -31,89 +31,32 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 Countries_of_the_world <- read_csv(here :: here("data/countries of the world.csv"))
 ```
 
-## The question we wanted to answer during this project was whether there was a relationship between geographical and societal qualities in countries all over the world. {data-background-image="img/confetti.jpg"}
 
-# Section title
+# The question we wanted to answer during this project was whether there was a relationship between geographical and societal qualities in countries all over the world. {data-background-image="img/confetti.jpg"} 
 
-# Hello World
-
-- Click the `Knit` button to compile your presentation
-
-- Make sure to commit and push all resulting files to your GitHub repo
-
-# Using reveal.js
-
-It's possible to have a horizontal sliding transition as well as nest multiple slides to create a vertical stack.
-
-When presenting, you use the left/right arrows to step through the top-level (horizontal) slides. When you arrive at a vertical stack you can optionally press the up/down arrows to view the vertical slides or skip past them by pressing the right arrow.
-
-(click the down key now)
-
-## reveal.js
-
-- The presentation is created using the `reveal.js` package
-
-- You can create a slide show broken up into sections by using the # and ## heading tags
-
-- You can also create a new slide without a header using a horizontal rule (----)
-
-----
-
-- You can also add pauses between content on a slide using (". . .")
-
-. . .
-
-Like this.
-
-...or using "::: fragment"
-
-::: fragment
-
-Like this.
-
-:::
-
-# Layouts
-
-You can use plain text
-
-- or bullet points
-
-<div>
-  <div style="float: left; width: 50%;">or text in two columns</div>
-  <div style="float: left; width: 50%;">like this</div>
-</div>
-
-because you can combine HTML and Markdown syntax.
-
-<p style="font-size: 8pt; position: absolute; bottom: -5em; width: 100%; text-align: center;">*You can also add footnotes</p>
-
-# Code
+# regression analysis (main)
 
 ```{r boring-regression, echo = FALSE}
 # a boring regression
-Countries_of_the_world <- linear_reg(
-  
-)
-crops/arable
 ```
+
+# other statistical methods used
 
 # Plots
 
 ```{r recode-species, echo = FALSE}
-# In this chunk I'm doing a bunch of analysis that I don't want to present 
-# in my slides. But I need the resulting data frame for a plot I want to present.
-iris_modified <- iris %>%
-  mutate(Species = fct_other(Species, keep = "setosa"))
+Countries_of_the_world %>%
+  select(-c("country", "region")) %>%
+  GGally::ggpairs()
+  
 ```
 
-```{r plot-iris, echo = FALSE}
-# Code hidden with echo = FALSE
-# Uses modified iris dataset from previous chunk
-# Play around with height and width until you're happy with the look
-ggplot(data = iris_modified, mapping = aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
-  geom_point() + 
-  theme_minimal() # theme options: https://ggplot2.tidyverse.org/reference/ggtheme.html
+```{r coastal_or_not, echo = FALSE}
+Countries_of_the_world %>%
+  mutate(coastal = if_else(coastline == 0, FALSE, TRUE)) %>%
+  ggplot(aes(x = GDP, colour = coastal)) +
+  geom_density()
+  
 ```
 
 ## Plot and text

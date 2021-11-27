@@ -9,6 +9,33 @@ Plan models - Yuki, Sara
 Make models - all
 Analyse data - Sara, Yuki
 
+
+FIRST SLIDE:
+TITLE
+SUBTITLE
+NAMES
+DATE
+
+SECOND SLIDE:
+QUESTION WE WANT TO ANSWER
+
+THIRD SLIDE AND FOURTH SLIDE:
+TALKING ABOUT THE DIFFERENT STATISTICAL METHODS WE USED AND WHY WE USED THEM
+
+FIFTH SLIDE:
+PART OF OUR CODE WHICH WE WANT TO HIGHLIGHT
+
+SIXTH SLIDE:
+3 OR 4 GRAPHS TO SHOW OUR OUTCOME
+
+SEVENTH SLIDE:
+TABLE FOR CERTAIN VARIABLES
+
+EIGHTH SLIDE:
+CONCLUSION WITH A PICTURE OF THE WORLD
+
+
+
 Plan Models
 Which variables do we want to compare?
 
@@ -51,13 +78,54 @@ climate:
 
 
 
-First Slide:
-The question we wanted to answer during this project was ...
-
-Second Slide:
-Si
 
 
+# Using reveal.js
+
+It's possible to have a horizontal sliding transition as well as nest multiple slides to create a vertical stack.
+
+When presenting, you use the left/right arrows to step through the top-level (horizontal) slides. When you arrive at a vertical stack you can optionally press the up/down arrows to view the vertical slides or skip past them by pressing the right arrow.
+
+(click the down key now)
+
+## reveal.js
+
+- The presentation is created using the `reveal.js` package
+
+- You can create a slide show broken up into sections by using the # and ## heading tags
+
+- You can also create a new slide without a header using a horizontal rule (----)
+
+----
+
+- You can also add pauses between content on a slide using (". . .")
+
+. . .
+
+Like this.
+
+...or using "::: fragment"
+
+::: fragment
+
+Like this.
+
+:::
+
+# Layouts
+
+You can use plain text
+
+- or bullet points
+
+<div>
+  <div style="float: left; width: 50%;">or text in two columns</div>
+  <div style="float: left; width: 50%;">like this</div>
+</div>
+
+because you can combine HTML and Markdown syntax.
+
+<p style="font-size: 8pt; position: absolute; bottom: -5em; width: 100%; text-align: center;">*You can also add footnotes</p>
 
 
 
