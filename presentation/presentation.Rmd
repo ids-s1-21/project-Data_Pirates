@@ -31,7 +31,7 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 Countries_of_the_world <- read_csv(here :: here("data/countries of the world.csv"))
 ```
 
-## A statement of the overall goal / research question {data-background-image="img/confetti.jpg"}
+## The question we wanted to answer during this project was whether there was a relationship between geographical and societal qualities in countries all over the world. {data-background-image="img/confetti.jpg"}
 
 # Section title
 
@@ -90,11 +90,12 @@ because you can combine HTML and Markdown syntax.
 
 # Code
 
-```{r boring-regression}
+```{r boring-regression, echo = FALSE}
 # a boring regression
-Coastline_vs_GDP <- lm(population_density ~ deathrate + infant_mortality, data = Countries_of_the_world)
-tidy(Coastline_vs_GDP)
-glance(Coastline_vs_GDP)
+Countries_of_the_world <- linear_reg(
+  
+)
+crops/arable
 ```
 
 # Plots
@@ -177,14 +178,3 @@ You can write LaTeX math expressions inside a pair of dollar signs (\$...\$), e.
 
 $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
 
-# Feeling adventurous?
-
-You can learn more about the options available at the following pages:
-
-- https://github.com/rstudio/revealjs
-
-- https://bookdown.org/yihui/rmarkdown/revealjs.html
-
-- http://www.jenniferbradham.org/post/reveal_js_markdown/
-
-- https://revealjs.com/

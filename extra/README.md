@@ -47,4 +47,39 @@ climate:
 1) Dry tropical or tundra and ice, classification B and E.
 2) Wet tropical, classification A.
 3) Temperate humid subtropical and temperate continental, classification Cfa, Cwa, and D.
-4) Dry hot summers and wet winters,
+4) Dry hot summers and wet winters
+
+
+
+First Slide:
+The question we wanted to answer during this project was ...
+
+Second Slide:
+Si
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Feeling adventurous?
+
+You can learn more about the options available at the following pages:
+
+- https://github.com/rstudio/revealjs
+
+- https://bookdown.org/yihui/rmarkdown/revealjs.html
+
+- http://www.jenniferbradham.org/post/reveal_js_markdown/
+
+- https://revealjs.com/
+
