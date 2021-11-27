@@ -152,3 +152,10 @@ You can learn more about the options available at the following pages:
 
 - https://revealjs.com/
 
+
+
+Or you can also include a full page image. See next slide.
+
+## {data-background-image="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"}
+
+
