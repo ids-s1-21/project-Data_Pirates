@@ -131,6 +131,7 @@ because you can combine HTML and Markdown syntax.
 
 
 
+MAKE SURE WE DONT COMPARE VARIABLES THAT MAY HAVE A SPURIOUS RELATIONSHIP..... 
 
 
 
