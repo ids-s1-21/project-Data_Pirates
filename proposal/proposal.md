@@ -94,7 +94,7 @@ Countries_of_the_world %>%
   geom_point() + 
   labs(
     x = "GDP Per Capita",
-    y = "Infant Mortality"
+    y = "Infant Mortality Per 1000"
   )
 ```
 

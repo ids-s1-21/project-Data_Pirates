@@ -135,7 +135,7 @@ MAKE SURE WE DONT COMPARE VARIABLES THAT MAY HAVE A SPURIOUS RELATIONSHIP.....
 
 
 
-
+{data-background-image="img/confetti.jpg"} 
 
 
 

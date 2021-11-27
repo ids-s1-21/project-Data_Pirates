@@ -1,8 +1,8 @@
 ---
-title: Relationship between geographical and societal qualities
-subtitle: <font size='6'> Of countries in the world</font>
-author: <font size='8'> Data_Pirates <br> Hamish, Sara, Li Shiyao</font>
-institute: <font size='10'>University of Edinburgh</font>
+title: <font size='10'>Relationship between geographical and societal qualities</font>
+subtitle: <font size='8'> Of countries in the world</font>
+author: <font size='6'> Data Pirates <br> Hamish, Sara, Li Shiyao</font>
+institute: <font size='6'>University of Edinburgh</font>
 date: <font size = '6'>`r Sys.Date()`</font>
 output:
   revealjs::revealjs_presentation:
@@ -59,24 +59,33 @@ Countries_of_the_world <- Countries_of_the_world %>%
 ```
 
 
-# Is there a  relationship between geographical and societal qualities in countries all over the world? {data-background-image="img/confetti.jpg"} 
+# Is there a  relationship between geographical and societal qualities in countries all over the world? 
 
-# regression analysis (main)
+# (liner or logistic) Regression analysis
 
-```{r boring-regression, echo = FALSE}
-# a boring regression
+```{r regression, echo = FALSE}
+infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality, data = Countries_of_the_world)
+tidy(infant_mortality_vs_GDP)
+glance(infant_mortality_vs_GDP)
 ```
+
+linear equation...
 
 You can write LaTeX math expressions inside a pair of dollar signs (\$...\$), e.g. $\alpha+\beta$. You can use the display style with double dollar signs:
 
 $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-# other statistical methods used
-
-# Plots
 
 
+# Other statistical methods used
 
-```{r coastal_or_not, echo = FALSE}
+```{r stat-method, echo = FALSE}
+#show other type of statistical method.
+#could use highlight function in order to highlight specific parts of the code
+```
+
+# Coastline vs GDP
+
+```{r coastal_or_not, warning=FALSE, echo = FALSE}
 Countries_of_the_world %>%
   mutate(coastal = if_else(coastline == 0, FALSE, TRUE)) %>%
   ggplot(aes(x = GDP, colour = coastal)) +
@@ -84,21 +93,18 @@ Countries_of_the_world %>%
   
 ```
 
+description of what is happening in the graph and what it shows and why we chose these variables can be added to write up and explained in presentation
+
+
 ## Plot and text
 
-::: columns
-:::: column
-* Some text
-* goes here
-::::
-
-:::: column
 ```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
-# see how I changed out.width and fig.width from defaults
-# to make the figure bigger
-ggplot(penguins, aes(x = bill_length_mm, y = species, color = species)) +
-  geom_boxplot() +
+Countries_of_the_world %>%
+  mutate(prop_crops_arable = crops/arable) %>%
+  ggplot(aes(x = GDP, y = prop_crops_arable, color = region)) +
+  geom_col(alpha = 0.2) +
   theme_minimal()
+  
 ```
 ::::
 :::
