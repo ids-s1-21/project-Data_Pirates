@@ -28,11 +28,11 @@ knitr::opts_chunk$set(fig.retina = 3, dpi = 300, fig.width = 6, fig.asp = 0.618,
 ```
 
 ```{r load-data, include=FALSE}
-Countries_of_the_world <- read_csv(here :: here("data/countries of the world.csv"))
+Cotw <- read_csv(here :: here("data/countries of the world.csv"))
 ```
 
 ```{r rename-variables, echo = FALSE}
-Countries_of_the_world <- Countries_of_the_world %>%
+Cotw <- Cotw %>%
   rename(
       country = Country,
       region = Region,
@@ -59,12 +59,17 @@ Countries_of_the_world <- Countries_of_the_world %>%
 ```
 
 
-# Is there a  relationship between geographical and societal qualities in countries all over the world? 
+# What is the relationship between geographical, economical and societal qualities in countries all over the world? 
 
-# (liner or logistic) Regression analysis
+# To break this question down, we're going to look at 3 specific areas -
+1. How strong is the correlation between economical and societal qualities
+2. How impactful are geographical qualities on the development of societal qualities
+3. What is the relationship between geographical qualities and economical qualities
+
+# (linear or logistic) Regression analysis
 
 ```{r regression, echo = FALSE}
-infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality, data = Countries_of_the_world)
+infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality, data = Cotw)
 tidy(infant_mortality_vs_GDP)
 glance(infant_mortality_vs_GDP)
 ```
@@ -86,7 +91,7 @@ $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
 # Coastline vs GDP
 
 ```{r coastal_or_not, warning=FALSE, echo = FALSE}
-Countries_of_the_world %>%
+Cotw %>%
   mutate(coastal = if_else(coastline == 0, FALSE, TRUE)) %>%
   ggplot(aes(x = GDP, colour = coastal)) +
   geom_density()
@@ -95,11 +100,32 @@ Countries_of_the_world %>%
 
 description of what is happening in the graph and what it shows and why we chose these variables can be added to write up and explained in presentation
 
+# Economic sectors vs Location
+
+```{r continent-vs-sector}
+library(reshape2)
+cotwspe <- Cotw %>%
+  select(region, agriculture, service, industry) %>% 
+  group_by(region) %>%
+  mutate(meanagr = mean(agriculture, na.rm = TRUE)) %>%
+  mutate(meanser = mean(service, na.rm = TRUE)) %>%
+  mutate(meanind = mean(industry, na.rm = TRUE)) %>%
+  select(region, meanagr, meanind, meanser) %>%
+  melt(id.vars="region")
+
+ggplot(unique(cotwspe), aes(x = region, y = value, fill = variable)) +
+  geom_bar(stat = "identity")
+  
+  #this obvsly isnt finished so feel free to try to improve it (maybe tidy the region variables to continents, invert the x and y axis etc) what im trying to show here is that there is a difference in economic qualities (sectors) depending on what area of the world u are in, then we can maybe explore why this is etc.
+
+
+
+```
 
 ## Plot and text
 
 ```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
-Countries_of_the_world %>%
+Cotw %>%
   mutate(prop_crops_arable = crops/arable) %>%
   ggplot(aes(x = GDP, y = prop_crops_arable, color = region)) +
   geom_col(alpha = 0.2) +
