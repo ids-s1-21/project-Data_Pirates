@@ -111,12 +111,15 @@ cotwspe <- Cotw %>%
   mutate(meanser = mean(service, na.rm = TRUE)) %>%
   mutate(meanind = mean(industry, na.rm = TRUE)) %>%
   select(region, meanagr, meanind, meanser) %>%
-  melt(id.vars="region")
+  melt(id.vars="region") %>%
+  
 
-ggplot(unique(cotwspe), aes(x = region, y = value, fill = variable)) +
+ggplot(unique(cotwspe), aes(x = value, y = region, fill = variable)) +
   geom_bar(stat = "identity")
   
-  #this obvsly isnt finished so feel free to try to improve it (maybe tidy the region variables to continents, invert the x and y axis etc) what im trying to show here is that there is a difference in economic qualities (sectors) depending on what area of the world u are in, then we can maybe explore why this is etc.
+  #this obvsly isnt finished so feel free to try to improve it (maybe tidy the region variables to continents etc) what im trying to show here is that there is a difference in economic qualities (sectors) depending on what area of the world u are in, then we can maybe explore why this is etc.
+
+#also i think we should have a circular bar plot somewhere in our project, as i think that would fit our question well.
 
 
 
