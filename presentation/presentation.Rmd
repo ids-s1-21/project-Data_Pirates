@@ -104,6 +104,7 @@ description of what is happening in the graph and what it shows and why we chose
 # Economic sectors vs Location
 
 ```{r continent-vs-sector}
+
 cotwspe <- Cotw %>%
   select(region, agriculture, service, industry) %>% 
   group_by(region) %>%
@@ -111,7 +112,7 @@ cotwspe <- Cotw %>%
   mutate(meanser = mean(service, na.rm = TRUE)) %>%
   mutate(meanind = mean(industry, na.rm = TRUE)) %>%
   select(region, meanagr, meanind, meanser) %>%
-  melt(id.vars="region") %>%
+  melt(id.vars="region") 
   
 
 ggplot(unique(cotwspe), aes(x = value, y = region, fill = variable)) +
