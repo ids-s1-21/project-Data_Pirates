@@ -70,16 +70,20 @@ Cotw <- Cotw %>%
 # (linear or logistic) Regression analysis
 
 ```{r regression, echo = FALSE}
-infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality, data = Cotw)
+infant_mortality_vs_GDP <- lm(GDP ~ deathrate+infant_mortality , data = Cotw)
 tidy(infant_mortality_vs_GDP)
 glance(infant_mortality_vs_GDP)
+linear_reg() %>%
+  set_engine("lm") %>%
+  fit(log(GDP) ~ deathrate+infant_mortality , data =Cotw) %>%
+  tidy()
 ```
 
 linear equation...
-
+log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant_mortality
 You can write LaTeX math expressions inside a pair of dollar signs (\$...\$), e.g. $\alpha+\beta$. You can use the display style with double dollar signs:
 
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+$$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant mortality$$
 
 
 # Other statistical methods used
