@@ -95,7 +95,11 @@ $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
 Cotw %>%
   mutate(coastal = if_else(coastline == 0, FALSE, TRUE)) %>%
   ggplot(aes(x = GDP, colour = coastal)) +
-  geom_density()
+  geom_density() +
+  labs(title = "Relationship between GDP per capita and if the country is bordered by the ocean",
+       x = "GDP per capita",
+       y = "Density",
+       colour = "Coastal")
   
 ```
 
@@ -103,7 +107,22 @@ description of what is happening in the graph and what it shows and why we chose
 
 # Economic sectors vs Location
 
-```{r continent-vs-sector}
+```{r continent-tidy}
+Cotw <- Cotw %>%
+  mutate(Continent = case_when(region == "ASIA (EX. NEAR EAST)" ~ "Asia",
+                               region == "NEAR EAST" ~ "Asia",
+                               region == "C.W. OF IND. STATES" ~ "Asia",
+                               region == "WESTERN EUROPE" ~ "Europe",
+                               region == "BALTICS" ~ "Europe",
+                               region == "EASTERN EUROPE" ~ "Europe", 
+                               region == "LATIN AMER. & CARIB" ~ "South America",
+                               region == "NORTHERN AMERICA" ~ "North America",
+                               region == "OCEANIA" ~ "Oceania",
+                               region == "SUB-SAHARAN AFRICA" ~ "Africa",
+                               region == "NORTHERN AFRICA" ~ "Africa"))
+```
+
+```{r continent-vs-sector, echo = false}
 
 cotwspe <- Cotw %>%
   select(region, agriculture, service, industry) %>% 
@@ -115,7 +134,7 @@ cotwspe <- Cotw %>%
   melt(id.vars="region") 
   
 
-ggplot(unique(cotwspe), aes(x = value, y = region, fill = variable)) +
+ggplot(unique(cotwspe), aes(x = value, y = region, fill = variable)) + 
   geom_bar(stat = "identity")
   
   #this obvsly isnt finished so feel free to try to improve it (maybe tidy the region variables to continents etc) what im trying to show here is that there is a difference in economic qualities (sectors) depending on what area of the world u are in, then we can maybe explore why this is etc.

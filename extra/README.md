@@ -159,3 +159,30 @@ Or you can also include a full page image. See next slide.
 ## {data-background-image="https://images.unsplash.com/photo-1535448033526-c0e85c9e6968?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"}
 
 
+
+```{r continent-vs-sector, echo = false}
+
+#tidy_ca
+
+#cotwspe <- Cotw %>%
+  #select(region, agriculture, service, industry) %>% 
+  #group_by(region) %>%
+  #mutate(meanagr = mean(agriculture, na.rm = TRUE)) %>%
+  #mutate(meanser = mean(service, na.rm = TRUE)) %>%
+  #mutate(meanind = mean(industry, na.rm = TRUE)) %>%
+  #select(region, meanagr, meanind, meanser) %>%
+  #melt(id.vars="region") 
+  
+
+#ggplot(unique(cotwspe), aes(x = value, y = region, fill = variable)) +
+ # geom_bar(stat = "identity")
+  
+  #this obvsly isnt finished so feel free to try to improve it (maybe tidy the region variables to continents etc) what im trying to show here is that there is a difference in economic qualities (sectors) depending on what area of the world u are in, then we can maybe explore why this is etc.
+
+#also i think we should have a circular bar plot somewhere in our project, as i think that would fit our question well.
+
+
+
+```
+
+
