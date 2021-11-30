@@ -77,17 +77,17 @@
   <h3 class="date"><font size = '6'>2021-11-30</font></h3>
 </section>
 
-<section id="what-is-the-relationship-between-geographical-economical-and-societal-qualities-in-countries-all-over-the-world" class="title-slide slide level1">
-<h1>What is the relationship between geographical, economical and societal qualities in countries all over the world?</h1>
+<section id="what-is-the-relationship-between-geographical-economic-and-societal-qualities-in-countries-all-over-the-world" class="title-slide slide level1">
+<h1>What is the relationship between geographical, economic and societal qualities in countries all over the world?</h1>
 
 </section>
 
 <section id="to-break-this-question-down-were-going-to-look-at-3-specific-areas--" class="title-slide slide level1">
 <h1>To break this question down, we’re going to look at 3 specific areas -</h1>
 <ol type="1">
-<li>How strong is the correlation between economical and societal qualities</li>
+<li>How strong is the correlation between economic and societal qualities</li>
 <li>How impactful are geographical qualities on the development of societal qualities</li>
-<li>What is the relationship between geographical qualities and economical qualities</li>
+<li>What is the relationship between geographical qualities and economic qualities</li>
 </ol>
 </section>
 
@@ -104,9 +104,14 @@
 ##       &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
 ## 1     0.432         0.427 7641.      83.6 9.77e-28     2 -2309. 4626. 4639.
 ## # … with 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
-<p>linear equation…</p>
-<p>You can write LaTeX math expressions inside a pair of dollar signs ($…$), e.g. <span class="math inline">\(\alpha+\beta\)</span>. You can use the display style with double dollar signs:</p>
-<p><span class="math display">\[\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i\]</span></p>
+<pre><code>## # A tibble: 3 × 5
+##   term             estimate std.error statistic   p.value
+##   &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+## 1 (Intercept)        9.07     0.100       90.3  8.31e-176
+## 2 deathrate          0.0746   0.0126       5.93 1.16e-  8
+## 3 infant_mortality  -0.0333   0.00177    -18.8  9.94e- 48</code></pre>
+<p>linear equation… log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant_mortality You can write LaTeX math expressions inside a pair of dollar signs ($…$), e.g. <span class="math inline">\(\alpha+\beta\)</span>. You can use the display style with double dollar signs:</p>
+<p><span class="math display">\[\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant mortality\]</span></p>
 </section>
 
 <section id="other-statistical-methods-used" class="title-slide slide level1">
@@ -123,7 +128,7 @@
 <section>
 <section id="economic-sectors-vs-location" class="title-slide slide level1">
 <h1>Economic sectors vs Location</h1>
-
+<p><img src="presentation_files/figure-revealjs/continent-vs-sector-1.png" width="80%" /></p>
 </section>
 <section id="plot-and-text" class="slide level2">
 <h2>Plot and text</h2>
