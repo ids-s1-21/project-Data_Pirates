@@ -4,23 +4,27 @@ by Data Pirates
 
 ## Summary
 
-Write-up of your project and findings go here. Think of this as the text
-of your presentation. The length should be roughly 5 minutes when read
-out loud. Although pacing varies, a 5-minute speech is roughly 750
-words. To use the word count addin, select the text you want to count
-the words of (probably this is the Summary section of this document, go
-to Addins, and select the `Word count` addin). This addin counts words
-using two different algorithms, but the results should be similar and as
-long as you’re in the ballpark of 750 words, you’re good! The addin will
-ignore code chunks and only count the words in prose.
+The data set that we decided to analyse for this project is called
+‘Countries of the world’. The data set has a variety of information
+about different aspects of countries in the world between the year 1970
+and the year 2017. It is made up of data from the US government
+specifically the CIA World Factbook. However we decided to do was to
+rename our variables using snake_case inorder to make them more
+accessible to use and to evaluate.
 
-You can also load your data here and present any analysis results /
-plots, but I strongly urge you to keep that to a minimum (maybe only the
-most important graphic, if you have one you can choose). And make sure
-to hide your code with `echo = FALSE` unless the point you are trying to
-make is about the code itself. Your results with proper output and
-graphics go in your presentation, this space is for a brief summary of
-your project.
+Our main aim in this project was to research whether there is a
+relationship between various geographical, economic and societal
+qualities across the different countries. We hypothesized that there to
+be at least a weak relationship between quality of life and other
+qualities of the country such as economic and physical qualities.
+Therefore we expected that our results would show at least some
+correlation between variables which would then in turn support our
+hypothesis. In this write up we will develop on the statistical
+techniques we used during the course of this project and whether or not
+we can conclude that our initial hypothesis is correct.
+
+The first thing we did was to break down our research question into 3
+components
 
 ## Presentation
 
