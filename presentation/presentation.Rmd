@@ -156,7 +156,7 @@ Cotw %>%
 If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
 ```{r iris-table, echo = FALSE}
-kable(head(iris), format = "html")
+kable(head(data = Cotw, select(continent, population)), format = "html")
 ```
 
 # To conclude {data-background-image="img/world-map.gif"}
@@ -165,7 +165,7 @@ kable(head(iris), format = "html")
 
 
 Hamish - 2 plots + fix, edit write-up, regression
-Sara - introduction of write up, essay plan, labs and table (continent and related descriptive columns), background theme
+Sara - introduction of write up (done), essay plan (done), labs and table (continent and related descriptive columns), background theme
 Yuki - conclusion, labs, make a plot
 
 
