@@ -60,50 +60,36 @@ Cotw <- Cotw %>%
 ```
 
 
-# What is the relationship between geographical, economical and societal qualities in countries all over the world? 
+# What is the relationship between geographical, economic and societal qualities in countries all over the world? 
 
 # To break this question down, we're going to look at 3 specific areas -
-1. How strong is the correlation between economical and societal qualities
+1. How strong is the correlation between economic and societal qualities
 2. How impactful are geographical qualities on the development of societal qualities
-3. What is the relationship between geographical qualities and economical qualities
+3. What is the relationship between geographical qualities and economic qualities
 
 # (linear or logistic) Regression analysis
 
 ```{r regression, echo = FALSE}
-infant_mortality_vs_GDP <- lm(GDP ~ deathrate+infant_mortality , data = Cotw)
+infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality , data = Cotw)
 tidy(infant_mortality_vs_GDP)
 glance(infant_mortality_vs_GDP)
 linear_reg() %>%
   set_engine("lm") %>%
-  fit(log(GDP) ~ deathrate+infant_mortality , data =Cotw) %>%
+  fit(log(GDP) ~ deathrate + infant_mortality , data = Cotw) %>%
   tidy()
 ```
 
 linear equation...
 log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant_mortality
-You can write LaTeX math expressions inside a pair of dollar signs (\$...\$), e.g. $\alpha+\beta$. You can use the display style with double dollar signs:
+
 
 $$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant mortality$$
 
 
-# Other statistical methods used
+# circle bar
 
-```{r stat-method, echo = FALSE}
-#show other type of statistical method.
-#could use highlight function in order to highlight specific parts of the code
-```
-
-# Coastline vs GDP
-
-```{r coastal_or_not, warning=FALSE, echo = FALSE}
-Cotw %>%
-  mutate(coastal = if_else(coastline == 0, FALSE, TRUE)) %>%
-  ggplot(aes(x = GDP, colour = coastal)) +
-  geom_density() +
-  labs(title = "Relationship between GDP per capita and if the country is bordered by the ocean",
-       x = "GDP per capita",
-       y = "Density",
-       colour = "Coastal")
+```{r circle-bar, warning=FALSE, echo = FALSE}
+#circle bar
   
 ```
 
@@ -111,7 +97,7 @@ description of what is happening in the graph and what it shows and why we chose
 
 # Economic sectors vs Location
 
-```{r continent-tidy}
+```{r continent-tidy, echo = FALSE}
 Cotw <- Cotw %>%
   mutate(continent = case_when(region == "ASIA (EX. NEAR EAST)" ~ "Asia",
                                region == "NEAR EAST" ~ "Asia",
@@ -119,15 +105,14 @@ Cotw <- Cotw %>%
                                region == "WESTERN EUROPE" ~ "Europe",
                                region == "BALTICS" ~ "Europe",
                                region == "EASTERN EUROPE" ~ "Europe", 
-                               region == "LATIN AMER. & CARIB" ~ "South America",
+                               region == "LATIN AMER. & CARIB" ~ "South and Central America",
                                region == "NORTHERN AMERICA" ~ "North America",
                                region == "OCEANIA" ~ "Oceania",
                                region == "SUB-SAHARAN AFRICA" ~ "Africa",
                                region == "NORTHERN AFRICA" ~ "Africa"))
 ```
 
-```{r continent-vs-sector, echo = false}
-
+```{r continent-vs-sector, echo = FALSE}
 cotwspe <- Cotw %>%
   select(continent, agriculture, service, industry) %>% 
   group_by(continent) %>%
@@ -135,7 +120,7 @@ cotwspe <- Cotw %>%
   mutate(meanser = mean(service, na.rm = TRUE)) %>%
   mutate(meanind = mean(industry, na.rm = TRUE)) %>%
   select(continent, meanagr, meanind, meanser) %>%
-  melt(id.vars="continent") 
+  melt(id.vars = "continent") 
   
 
 ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) + 
@@ -146,15 +131,7 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
     x = "Value",
     y = "Continent",
     fill = "Variable"
-    
-  )
-  
-  #this obvsly isnt finished so feel free to try to improve it (maybe tidy the region variables to continents etc) what im trying to show here is that there is a difference in economic qualities (sectors) depending on what area of the world u are in, then we can maybe explore why this is etc.
-
-#also i think we should have a circular bar plot somewhere in our project, as i think that would fit our question well.
-
-
-
+    ) 
 ```
 
 ## Plot and text
@@ -164,11 +141,11 @@ Cotw %>%
   mutate(prop_crops_arable = crops/arable) %>%
   ggplot(aes(x = GDP, y = prop_crops_arable, color = continent)) +
   geom_col(alpha = 0.2) +
-  theme_minimal() +
-  labs(
-    title =
-  )
-  
+  theme_minimal() 
+  #labs(
+    #title =
+ # )
+  #
 ```
 ::::
 :::
@@ -205,6 +182,8 @@ kable(head(iris), format = "html")
 # Thank you for listening :)
 
 
-
+Hamish - 2 plots + fix, edit write-up, regression
+Sara - introduction of write up, essay plan, labs and table (continent and related descriptive columns), background theme
+Yuki - conclusion, labs, make a plot
 
 

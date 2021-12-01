@@ -18,7 +18,7 @@ library(here)
 
 The dataset that we have decided to analyse for this project is called ‘Countries of the world’. 
 
-In this project we aim to research the relationships between various geographical and societal qualities across the different countries.
+In this project we aim to research the relationships between various geographical, economic and societal qualities across the different countries.
 
 There are 20 variables in this dataset, which include:
 `country`, `region`, `population`, `area`, `pop_density`, `coastline `, `net_migration`, `infant_mortality`, `GDP`, `literacy`, `phones`, `arable`, `crops`, `other`, `climate`, `birthrate`, `deathrate`, `agriculture`, `industry` and `service`.
@@ -92,9 +92,7 @@ Countries_of_the_world %>%
 
 As shown in the graph usually as the GDP Per Capita goes up the infant mortality goes down. 
 
-```{r}
 
-```
 
 
 
