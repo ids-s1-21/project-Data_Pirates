@@ -67,7 +67,7 @@ Cotw <- Cotw %>%
 2. How impactful are geographical qualities on the development of societal qualities
 3. What is the relationship between geographical qualities and economic qualities
 
-# (linear or logistic) Regression analysis
+# Linear Regression analysis
 
 ```{r regression, echo = FALSE}
 
