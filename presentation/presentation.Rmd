@@ -21,6 +21,7 @@ library(knitr)
 library(revealjs)
 library(gganimate)
 library(reshape2)
+library(patchwork)
 ```
 
 ```{r setup, include=FALSE}
@@ -69,7 +70,7 @@ Cotw <- Cotw %>%
 
 # Linear Regression analysis
 
-```{r regression, echo = FALSE}
+```{r regression, echo = FALSE, include = FALSE}
 
 infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality , data = Cotw)
 tidy(infant_mortality_vs_GDP)
@@ -139,15 +140,29 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
 ## Plot and text
 
 ```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
-Cotw %>%
-  mutate(prop_crops_arable = crops/arable) %>%
-  ggplot(aes(x = GDP, y = prop_crops_arable, color = continent)) +
-  geom_col(alpha = 0.2) +
-  theme_minimal() 
-  #labs(
-    #title =
- # )
-  #
+p1 <- Cotw %>%
+  ggplot(aes(x = phones, y = service, color = continent)) +
+  geom_point(alpha = 1) +
+  geom_smooth(inherit.aes = FALSE, aes(x = phones, y = service), method = "lm", se = FALSE)+
+  ylim(0,1)+
+  theme(legend.title = element_blank(),
+        legend.text = element_blank(),
+        legend.position = "none")+
+  labs(x = "Phones per 1000",
+       y = "Service")
+  
+p2 <- Cotw %>%
+  ggplot(aes(x = GDP, y = service, color = continent)) +
+  geom_point(alpha = 1) +
+  geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE)+
+  ylim(0,1)+
+  theme(axis.title.y = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks.y = element_blank())+
+  labs(x = "GDP per Capita",
+       y = "Service",
+       colour = "Continent")
+p1 + p2
 ```
 
 
@@ -156,7 +171,7 @@ Cotw %>%
 If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
 ```{r iris-table, echo = FALSE}
-kable(head(data = Cotw, select(continent, population)), format = "html")
+#kable(head(data = Cotw, select(continent, population)), format = "html")
 ```
 
 # To conclude {data-background-image="img/world-map.gif"}
