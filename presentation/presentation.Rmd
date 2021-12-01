@@ -70,6 +70,7 @@ Cotw <- Cotw %>%
 # (linear or logistic) Regression analysis
 
 ```{r regression, echo = FALSE}
+
 infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality , data = Cotw)
 tidy(infant_mortality_vs_GDP)
 glance(infant_mortality_vs_GDP)
@@ -122,7 +123,6 @@ cotwspe <- Cotw %>%
   select(continent, meanagr, meanind, meanser) %>%
   melt(id.vars = "continent") 
   
-
 ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) + 
   geom_bar(stat = "identity") +
   labs(
@@ -131,7 +131,9 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
     x = "Value",
     y = "Continent",
     fill = "Variable"
-    ) 
+    )+
+  scale_fill_discrete(labels = c("Agriculture", "Industry", "Service"))
+
 ```
 
 ## Plot and text
