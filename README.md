@@ -39,7 +39,7 @@ societal qualities.
 
 In order to answer the second component, we first wanted to show the
 difference in economic sectors depending on the continent. We used the
-agriculture, industry and service variable and saw that America had the
+agriculture, industry and service variables and saw that America had the
 highest value for service but the lowest value for agriculture.
 Meanwhile, Africa had the lowest value for service but the highest value
 for agriculture. There was also quite a significant difference between
@@ -85,12 +85,11 @@ Our presentation can be found [here](presentation/presentation.html).
 
 ## Data
 
-Include a citation for your data here. See
-<http://libraryguides.vu.edu.au/c.php?g=386501&p=4347840> for guidance
-on proper citation for datasets. If you got your data off the web, make
-sure to note the retrieval date.
+Author: CIA Year: 2017 Title: The World Factbook Description: Electronic
+Dataset Date viewed and URL: 22nd October 2021
+<https://www.kaggle.com/fernandol/countries-of-the-world.>.
 
 ## References
 
-List any references here. You should, at a minimum, list your data
-source.
+<https://www.kaggle.com/fernandol/countries-of-the-world>.
+<https://www.cia.gov/library/publications/the-world-factbook/docs/faqs.html>
