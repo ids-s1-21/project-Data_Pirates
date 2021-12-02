@@ -82,8 +82,6 @@ linear_reg() %>%
 ```
 
 linear equation...
-log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant_mortality
-
 
 $$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant mortality$$
 
