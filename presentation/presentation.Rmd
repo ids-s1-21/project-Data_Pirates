@@ -88,7 +88,7 @@ linear_reg() %>%
 
 
 Linear equation...
-<font size='6'>$$\log(GDP)=8.32 + 0.035* deathrate - 0.0186* infantmortality + 0.00255*phones$$</font>
+<font size='4'>$$\log(GDP)=8.32 + 0.035* deathrate - 0.0186* infantmortality + 0.00255*phones$$</font>
 
 
 
@@ -138,11 +138,11 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
 Cotw %>%
   ggplot(aes(x = GDP, y = service, color = continent)) +
   geom_point(alpha = 1) +
-  geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE)+
+  geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE) +
   guides(color = guide_legend(override.aes = list(size = 0.4))) + 
   theme(legend.title = element_text(size  = rel(0.8)),
-        legend.text = element_text(size = rel(0.6)))+
-  labs(title="GDP per Capita vs. service",
+        legend.text = element_text(size = rel(0.6))) +
+  labs(title = "GDP per Capita vs. service",
        x = "GDP per Capita",
        y = "Service",
        colour = "Continent")
@@ -153,14 +153,16 @@ Cotw %>%
 ```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
 Cotw %>%
   ggplot(aes(x = arable, y = GDP, color = continent)) +
-  geom_point() 
-  #geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE)
+  geom_point() +
+  geom_smooth(inherit.aes = FALSE, aes(x = arable, y = GDP), method = "lm", se = FALSE) +
+    guides(color = guide_legend(override.aes = list(size = 0.4))) + 
+  theme(legend.title = element_text(size  = rel(0.8)),
+        legend.text = element_text(size = rel(0.6))) +
+  labs(title = "GDP per Capita vs. Arable",
+       x = "Arable",
+       y = "GDP per Capita",
+       colour = "Continent")
 ```
+
 # To conclude {data-background-image="img/world-map.gif"}
-
-
-Hamish - 2 plots + fix, edit write-up, regression
-Sara - introduction of write up (done), essay plan (done), labs and table (continent and related descriptive columns), background theme
-Yuki - conclusion, labs, make a plot
-
 
