@@ -109,7 +109,7 @@ Cotw <- Cotw %>%
                                region == "NORTHERN AFRICA" ~ "Africa"))
 ```
 
-```{r continent-vs-sector, echo = FALSE}
+```{r continent-vs-sector, echo = FALSE, message=FALSE}
 cotwspe <- Cotw %>%
   select(continent, agriculture, service, industry) %>% 
   group_by(continent) %>%
@@ -134,7 +134,7 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
 
 ## 
 
-```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
+```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE, message=FALSE}
 Cotw %>%
   ggplot(aes(x = GDP, y = service, color = continent)) +
   geom_point(alpha = 1) +
@@ -150,7 +150,7 @@ Cotw %>%
 
 ##
 
-```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
+```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE, message=FALSE}
 Cotw %>%
   ggplot(aes(x = arable, y = GDP, color = continent)) +
   geom_point() +
