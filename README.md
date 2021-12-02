@@ -23,28 +23,33 @@ hypothesis. In this write up we will develop on the statistical
 techniques we used during the course of this project and whether or not
 we can conclude that our initial hypothesis is correct.
 
-The first thing we did was to answer our research question was to it break down into 3 components: 
-1. How strong is the correlation between
-economic and societal qualities? 
-2. How impactful are geographical
-qualities on the development of societal qualities? 
-3. What is the relationship between geographical qualities and economic qualities?
+The first thing we did was to answer our research question was to it
+break down into 3 components: 1. How strong is the correlation between
+economic and societal qualities? 2. How impactful are geographical
+qualities on the development of societal qualities? 3. What is the
+relationship between geographical qualities and economic qualities?
 
-We then decided to perform some linear regression in order to explore
-the relationship between GDP per capita and deathrate +
-infant_mortality. We saw that the R^2 value was 0.432. This in turn
-showed us that there is a relatively positive relationship between GDP
-per capita and the death rate + the infant mortality rate.
+In order to answer the first component we then decided to perform some
+linear regression in order to explore the relationship between GDP per
+capita and deathrate + infant_mortality. We saw that the R^2 value was
+0.432. This in turn showed us that there is a relatively positive
+relationship between GDP per capita and the death rate + the infant
+mortality rate. Hence we can determine that there is a relatively strong
+between certain economic and societal qualities.
 
-We then wanted to show the difference in economic sectors depending on
-the continent. We used the agriculture, industry and service variable
-and saw that America had the highest value for service but the lowest
-value for agriculture. Meanwhile, Africa had the lowest value for
-service but the highest value for agriculture. There was also quite a
-significant difference between the continent which had the highest value
-for service (North America) and the continent which had the lowest value
-for service (Africa). This shows that there is a relationship between
-continent and certain economic sectors.
+In order to answer the second component we wanted to show….(Add
+description of a graph created to explore this)
+
+In order to answer the third component we wanted to show the difference
+in economic sectors depending on the continent. We used the agriculture,
+industry and service variable and saw that America had the highest value
+for service but the lowest value for agriculture. Meanwhile, Africa had
+the lowest value for service but the highest value for agriculture.
+There was also quite a significant difference between the continent
+which had the highest value for service (North America) and the
+continent which had the lowest value for service (Africa). This shows
+that there is a relationship between certain geographical qualities and
+economic sectors.
 
 (add in description of other plots)
 
@@ -53,7 +58,17 @@ the proportion of crops being grown in comparison to the land available
 to grow crops. This showed…(After you tidy the graph we can fill this
 bit out)
 
-In conclusion, we can say that….
+In conclusion, we use many kinds of plot to show the relationship
+between various geographical, economic and societal qualities in our
+project. And now we can see the result directly and significantly.
+Firstly, there is a strong relationship between certain economic and
+societal qualities which is shown by visualizing the GDP per capita and
+deathrate + infant_mortality. Additionally, we use different economic
+sectors with continents and GDP per capita with the proportion of crops
+being grown in comparison to the land available to grow crops to show
+that the relationship also exists between geographical qualities and
+economic sectors. Then the relationship between geographic and society
+also shown by the plot…
 
 ## Presentation
 

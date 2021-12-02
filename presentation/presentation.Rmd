@@ -81,21 +81,11 @@ linear_reg() %>%
   tidy() 
 ```
 
-linear equation...
+Linear equation...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How does the deathrate and infant_mortality affect GDP$$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant mortality$$
+~~~~~~~~~~~~~~NEED TO FIX~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-How does the deathrate and infant_mortality affect GDP
-$$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant mortality$$
-
-
-# circle bar
-
-```{r circle-bar, warning=FALSE, echo = FALSE}
-#circle bar
-
-```
-
-description of what is happening in the graph and what it shows and why we chose these variables can be added to write up and explained in presentation
 
 # Economic sectors vs Location
 
@@ -132,7 +122,7 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
     x = "Value",
     y = "Continent",
     fill = "Variable"
-    )+
+    ) +
   scale_fill_discrete(labels = c("Agriculture", "Industry", "Service"))
 
 ```
@@ -143,25 +133,25 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
 p1 <- Cotw %>%
   ggplot(aes(x = phones, y = service, color = continent)) +
   geom_point(alpha = 1) +
-  geom_smooth(inherit.aes = FALSE, aes(x = phones, y = service), method = "lm", se = FALSE)+
-  ylim(0,1)+
+  geom_smooth(inherit.aes = FALSE, aes(x = phones, y = service), method = "lm", se = FALSE) +
+  ylim(0,1) +
   theme(legend.title = element_blank(),
         legend.text = element_blank(),
         legend.position = "none",
-        plot.title = element_text(size = rel(0.9)))+
-  labs(title=" phones per 1000 vs. service",
+        plot.title = element_text(size = rel(0.9))) +
+  labs(title="Phones per 1000 vs. service",
        x = "Phones per 1000",
        y = "Service")
   
 p2 <- Cotw %>%
   ggplot(aes(x = GDP, y = service, color = continent)) +
   geom_point(alpha = 1) +
-  geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE)+
-  ylim(0,1)+
+  geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE) +
+  ylim(0,1) +
   theme(axis.title.y = element_blank(),
         axis.text = element_blank(),
         axis.ticks.y = element_blank(),
-        plot.title = element_text(size = rel(0.9)))+
+        plot.title = element_text(size = rel(0.9))) +
   labs(title="GDP per Capita vs. service",
        x = "GDP per Capita",
        y = "Service",

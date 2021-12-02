@@ -27,7 +27,7 @@ In order to answer the third component we wanted to show the difference in econo
 
 we also wanted to explore the relationship between GDP per capita and the proportion of crops being grown in comparison to the land available to grow crops. This showed...(After you tidy the graph we can fill this bit out)
 
-In conclusion, we use many kinds of plot to show the relationship between geographical, economic and societal in our project. And now we can see the result directly and significantly. Firstly, there is a strong relationship between certain economic and societal qualities which is shown by visualizing the GDP per capita and deathrate + infant_mortality. Additionally, we use different economic sectors with continents and GDP per capita with the proportion of crops being grown in comparison to the land available to grow crops to show that the relationship also exists between geographical qualities and economic sectors. Then the relationship between geographic and society 
+In conclusion, we use many kinds of plot to show the relationship between various geographical, economic and societal qualities in our project. And now we can see the result directly and significantly. Firstly, there is a strong relationship between certain economic and societal qualities which is shown by visualizing the GDP per capita and deathrate + infant_mortality. Additionally, we use different economic sectors with continents and GDP per capita with the proportion of crops being grown in comparison to the land available to grow crops to show that the relationship also exists between geographical qualities and economic sectors. Then the relationship between geographic and society 
 also shown by the plot...
 
 
