@@ -1,5 +1,5 @@
 ---
-title: <font size='10'>Relationship between geographical and societal qualities</font>
+title: <font size='10'>Relationship between geographical, economic and societal qualities</font>
 subtitle: <font size='8'> Of countries in the world</font>
 author: <font size='6'> Data Pirates <br> Hamish, Sara, Li Shiyao</font>
 institute: <font size='6'>University of Edinburgh</font>
@@ -67,7 +67,7 @@ Cotw <- Cotw %>%
 
 # What is the relationship between geographical, economic and societal qualities in countries all over the world? 
 
-# To break this question down, we're going to look at 3 specific areas -
+#
 1. How strong is the correlation between economic and societal qualities
 2. How impactful are geographical qualities on the development of societal qualities
 3. What is the relationship between geographical qualities and economic qualities
@@ -85,9 +85,10 @@ linear_reg() %>%
   tidy() 
 ```
 
-Linear equation...
 
 How does the deathrate and infant_mortality affect GDP
+
+Linear equation...
 <font size='6'>$$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infantmortality$$</font>
 
 
