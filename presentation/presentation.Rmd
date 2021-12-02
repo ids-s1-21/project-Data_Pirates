@@ -68,28 +68,27 @@ Cotw <- Cotw %>%
 # What is the relationship between geographical, economic and societal qualities in countries all over the world? 
 
 #
-1. How strong is the correlation between economic and societal qualities
-2. How impactful are geographical qualities on the development of societal qualities
-3. What is the relationship between geographical qualities and economic qualities
+1. How strong is the correlation between economic and societal qualities? 
+2. How impactful are geographical qualities on the development of economic or societal qualities?
+
 
 # Linear Regression analysis
 
 ```{r regression, echo = FALSE, include = FALSE}
 
-infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality , data = Cotw) 
+infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality + phones, data = Cotw) 
 tidy(infant_mortality_vs_GDP)
 glance(infant_mortality_vs_GDP) 
 linear_reg() %>%
  set_engine("lm") %>%
-  fit(log(GDP) ~ deathrate+infant_mortality , data = Cotw) %>%
+  fit(log(GDP) ~ deathrate+infant_mortality+phones , data = Cotw) %>%
   tidy() 
 ```
 
 
-How does the deathrate and infant_mortality affect GDP
 
 Linear equation...
-<font size='6'>$$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infantmortality$$</font>
+<font size='6'>$$\log(GDP)=8.32 + 0.035* deathrate - 0.0186* infantmortality + 0.00255*phones$$</font>
 
 
 
@@ -136,36 +135,27 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
 ## 
 
 ```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
-p1 <- Cotw %>%
-  ggplot(aes(x = phones, y = service, color = continent)) +
-  geom_point(alpha = 1) +
-  geom_smooth(inherit.aes = FALSE, aes(x = phones, y = service), method = "lm", se = FALSE) +
-  ylim(0,1) +
-  theme(legend.title = element_blank(),
-        legend.text = element_blank(),
-        legend.position = "none",
-        plot.title = element_text(size = rel(0.9))) +
-  labs(title="Phones per 1000 vs. service",
-       x = "Phones per 1000",
-       y = "Service")
-  
-p2 <- Cotw %>%
+Cotw %>%
   ggplot(aes(x = GDP, y = service, color = continent)) +
   geom_point(alpha = 1) +
-  geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE) +
-  ylim(0,1) +
-  theme(axis.title.y = element_blank(),
-        axis.text = element_blank(),
-        axis.ticks.y = element_blank(),
-        plot.title = element_text(size = rel(0.9))) +
+  geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE)+
+  guides(color = guide_legend(override.aes = list(size = 0.4))) + 
+  theme(legend.title = element_text(size  = rel(0.8)),
+        legend.text = element_text(size = rel(0.6)))+
   labs(title="GDP per Capita vs. service",
        x = "GDP per Capita",
        y = "Service",
        colour = "Continent")
-p1 + p2
 ```
 
+##
 
+```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
+Cotw %>%
+  ggplot(aes(x = arable, y = GDP, color = continent)) +
+  geom_point() 
+  #geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE)
+```
 # To conclude {data-background-image="img/world-map.gif"}
 
 
