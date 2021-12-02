@@ -89,7 +89,7 @@ $$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant mortality$$
 
 ```{r circle-bar, warning=FALSE, echo = FALSE}
 #circle bar
-  
+
 ```
 
 description of what is happening in the graph and what it shows and why we chose these variables can be added to write up and explained in presentation
