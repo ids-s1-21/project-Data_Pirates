@@ -165,16 +165,7 @@ p1 + p2
 ```
 
 
-# Table
-
-```{r iris-table, echo = FALSE}
-
-  
-```
-
 # To conclude {data-background-image="img/world-map.gif"}
-
-# Thank you for listening :)
 
 
 Hamish - 2 plots + fix, edit write-up, regression
