@@ -22,6 +22,7 @@ library(revealjs)
 library(gganimate)
 library(reshape2)
 library(patchwork)
+library(magrittr)
 ```
 
 ```{r setup, include=FALSE}
@@ -82,9 +83,10 @@ linear_reg() %>%
 ```
 
 Linear equation...
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-How does the deathrate and infant_mortality affect GDP$$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant mortality$$
-~~~~~~~~~~~~~~NEED TO FIX~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+How does the deathrate and infant_mortality affect GDP
+<font size='6'>$$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infantmortality$$</font>
+
 
 
 # Economic sectors vs Location
@@ -127,10 +129,10 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
 
 ```
 
-## Plot and text
+## 
 
 ```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
-p1 <- Cotw %>%
+Cotw %>%
   ggplot(aes(x = phones, y = service, color = continent)) +
   geom_point(alpha = 1) +
   geom_smooth(inherit.aes = FALSE, aes(x = phones, y = service), method = "lm", se = FALSE) +
@@ -142,8 +144,11 @@ p1 <- Cotw %>%
   labs(title="Phones per 1000 vs. service",
        x = "Phones per 1000",
        y = "Service")
-  
-p2 <- Cotw %>%
+
+```
+
+```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
+Cotw %>%
   ggplot(aes(x = GDP, y = service, color = continent)) +
   geom_point(alpha = 1) +
   geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE) +
@@ -156,7 +161,6 @@ p2 <- Cotw %>%
        x = "GDP per Capita",
        y = "Service",
        colour = "Continent")
-p1 + p2
 ```
 
 
@@ -165,13 +169,11 @@ p1 + p2
 If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
 ```{r iris-table, echo = FALSE}
-#kable(head(data = Cotw, select(continent, population)), format = "html")
+kable(Cotw, 1:2, "html")
+  
 ```
 
 # To conclude {data-background-image="img/world-map.gif"}
-
-# Thank you for listening :)
-
 
 Hamish - 2 plots + fix, edit write-up, regression
 Sara - introduction of write up (done), essay plan (done), labs and table (continent and related descriptive columns), background theme
