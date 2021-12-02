@@ -28,7 +28,8 @@ As a result of all this analysis we can now confirm that our hypothesis that was
 
 ## Presentation
 
-Our presentation can be found [here](presentation/presentation.html).
+Our slides can be found [here](presentation/presentation.html).
+And our presentation can be found here https://media.ed.ac.uk/media/Ids%20Project/1_nf8ig6y6
 
 ## Data 
 
