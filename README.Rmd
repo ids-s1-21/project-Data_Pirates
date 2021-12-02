@@ -12,7 +12,7 @@ The data set that we decided to analyse for this project is called ‘Countries 
 
 Our main aim in this project was to research whether there is a relationship between various geographical, economic and societal qualities across the different countries. We hypothesized that there would be at least a weak relationship between quality of life and other qualities of the country such as economic and physical qualities. Therefore, we expected that our results would show at least some correlation between variables which would then in turn support our hypothesis. In this write up we will develop on the statistical techniques we used during the course of this project and whether or not we can conclude that our initial hypothesis is correct.  
 
-The first thing we did was to answer our research question was to it break down into 2 components:
+The first thing we did to answer our research question was to it break down into 2 components:
 1. How strong is the correlation between economic and societal qualities?
 2. How impactful are geographical qualities on the development and strength of any economy?
 

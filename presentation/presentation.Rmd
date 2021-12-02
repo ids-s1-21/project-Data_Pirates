@@ -69,7 +69,8 @@ Cotw <- Cotw %>%
 
 #
 1. How strong is the correlation between economic and societal qualities? 
-2. How impactful are geographical qualities on the development of economic or societal qualities?
+2. How impactful are geographical
+qualities on the development and strength of any economy?
 
 
 # Linear Regression analysis

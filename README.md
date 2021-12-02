@@ -23,8 +23,8 @@ hypothesis. In this write up we will develop on the statistical
 techniques we used during the course of this project and whether or not
 we can conclude that our initial hypothesis is correct.
 
-The first thing we did was to answer our research question was to it
-break down into 2 components: 1. How strong is the correlation between
+The first thing we did to answer our research question was to it break
+down into 2 components: 1. How strong is the correlation between
 economic and societal qualities? 2. How impactful are geographical
 qualities on the development and strength of any economy?
 
@@ -49,9 +49,12 @@ then wanted to find put if there was a relationship between GDP per
 Capita and sector. To do this we used the service sector. The output we
 generated as a result shows a clear positive relationship between the
 proportional size of the service sector and the GDP per capita. We can
-look at both graphs to deduce that geographical qualities have an impact
-not only on the breakdown of a country’s economy, but also on the
-strength of that country’s economy.
+look at both graphs to deduce that geographical qualities do have some
+sort of an impact not only on the breakdown of a country’s economy, but
+also on the strength of that country’s economy. However, when we tried
+to analyse how specific geographic qualities (such as arability) affect
+the strength of a country’s economy (GDP per capita) our analysis tends
+to break down slightly (little to no correlation).
 
 In conclusion, we have used many types of visualisations in order to
 show the relationship between various geographical, economic, and
