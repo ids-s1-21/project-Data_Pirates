@@ -6,7 +6,10 @@ institute: <font size='6'>University of Edinburgh</font>
 date: <font size = '6'>`r Sys.Date()`</font>
 output:
   revealjs::revealjs_presentation:
+    theme: sky
+    center: true
     self_contained: false
+    transition: fade
 editor_options: 
   chunk_output_type: console
 ---
@@ -132,7 +135,7 @@ ggplot(unique(cotwspe), aes(x = value, y = continent, fill = variable)) +
 ## 
 
 ```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
-Cotw %>%
+p1 <- Cotw %>%
   ggplot(aes(x = phones, y = service, color = continent)) +
   geom_point(alpha = 1) +
   geom_smooth(inherit.aes = FALSE, aes(x = phones, y = service), method = "lm", se = FALSE) +
@@ -144,11 +147,8 @@ Cotw %>%
   labs(title="Phones per 1000 vs. service",
        x = "Phones per 1000",
        y = "Service")
-
-```
-
-```{r warning=FALSE, out.width="100%", fig.width=4, echo=FALSE}
-Cotw %>%
+  
+p2 <- Cotw %>%
   ggplot(aes(x = GDP, y = service, color = continent)) +
   geom_point(alpha = 1) +
   geom_smooth(inherit.aes = FALSE, aes(x = GDP, y = service), method = "lm", se = FALSE) +
@@ -161,19 +161,21 @@ Cotw %>%
        x = "GDP per Capita",
        y = "Service",
        colour = "Continent")
+p1 + p2
 ```
 
 
 # Table
 
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
 ```{r iris-table, echo = FALSE}
-kable(Cotw, 1:2, "html")
+
   
 ```
 
 # To conclude {data-background-image="img/world-map.gif"}
+
+# Thank you for listening :)
+
 
 Hamish - 2 plots + fix, edit write-up, regression
 Sara - introduction of write up (done), essay plan (done), labs and table (continent and related descriptive columns), background theme
