@@ -72,19 +72,16 @@ Cotw <- Cotw %>%
 
 ```{r regression, echo = FALSE, include = FALSE}
 
-infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality , data = Cotw)
+infant_mortality_vs_GDP <- lm(GDP ~ deathrate + infant_mortality , data = Cotw) 
 tidy(infant_mortality_vs_GDP)
-glance(infant_mortality_vs_GDP)
+glance(infant_mortality_vs_GDP) 
 linear_reg() %>%
-  set_engine("lm") %>%
-  fit(log(GDP) ~ deathrate + infant_mortality , data = Cotw) %>%
-  tidy()
+ set_engine("lm") %>%
+  fit(log(GDP) ~ deathrate+infant_mortality , data = Cotw) %>%
+  tidy() 
 ```
 
-linear equation...
-log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant_mortality
-
-
+How does the deathrate and infant_mortality affect GDP
 $$\log(GDP)=9.07 + 0.0746* deathrate - 0.0333* infant mortality$$
 
 
@@ -147,8 +144,10 @@ p1 <- Cotw %>%
   ylim(0,1)+
   theme(legend.title = element_blank(),
         legend.text = element_blank(),
-        legend.position = "none")+
-  labs(x = "Phones per 1000",
+        legend.position = "none",
+        plot.title = element_text(size = rel(0.9)))+
+  labs(title=" phones per 1000 vs. service",
+       x = "Phones per 1000",
        y = "Service")
   
 p2 <- Cotw %>%
@@ -158,8 +157,10 @@ p2 <- Cotw %>%
   ylim(0,1)+
   theme(axis.title.y = element_blank(),
         axis.text = element_blank(),
-        axis.ticks.y = element_blank())+
-  labs(x = "GDP per Capita",
+        axis.ticks.y = element_blank(),
+        plot.title = element_text(size = rel(0.9)))+
+  labs(title="GDP per Capita vs. service",
+       x = "GDP per Capita",
        y = "Service",
        colour = "Continent")
 p1 + p2
