@@ -81,7 +81,7 @@ tidy(infant_mortality_vs_GDP)
 glance(infant_mortality_vs_GDP) 
 linear_reg() %>%
  set_engine("lm") %>%
-  fit(log(GDP) ~ deathrate+infant_mortality+phones , data = Cotw) %>%
+  fit(log(GDP) ~ deathrate + infant_mortality + phones , data = Cotw) %>%
   tidy() 
 ```
 
