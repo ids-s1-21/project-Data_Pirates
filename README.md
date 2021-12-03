@@ -62,7 +62,7 @@ societal qualities in our project. We can now therefore see the results
 directly and significantly. Firstly, as our intuition would have us
 expect, there is a strong relationship between certain economic and
 societal qualities which is shown by visualizing the GDP per capita and
-deathrate + infant mortality + phones per 1000. Furthermore, we saw that
+deathrate, infant mortality, phones per 1000. Furthermore, we saw that
 there was a quite a strong relationship (at least on a continental
 scale) between geographical qualities and economic qualities which is
 shown by visualizing different economic sectors against continents, and
@@ -81,7 +81,9 @@ larger dataset would likely be required.
 
 ## Presentation
 
-Our presentation can be found [here](presentation/presentation.html).
+Our slides can be found [here](presentation/presentation.html). And our
+presentation can be found here:
+(<https://media.ed.ac.uk/media/Ids%20Project/1_nf8ig6y6>)
 
 ## Data
 
